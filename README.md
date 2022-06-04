@@ -1,13 +1,20 @@
 # @suitegeezus/docdash-suitescript
-Docdash but enhanced to recognize [SuiteScript's JsDoc tags](https://docs.oracle.
-com/en/cloud/saas/netsuite/ns-online-help/chapter_4387175355.html):
+Docdash but enhanced: 
+- to recognize [SuiteScript's JsDoc tags](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4387175355.html)
+- Support for basic custom tags
+
+
+## SuiteScript JsDoc supported tags
 - NApiVersion
 - NModuleScope
 - NScriptType
 - [NAmdConfig](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4704111062.html)
+
+## Additional Tags
 - governance - arbitrary
 - appliestorecord - arbitrary
 
+## Basic Configuration 
 You will need to:
 1. inform jsdoc of these tags by adding the following in your jsdoc config plugins.
 ```json
@@ -19,11 +26,45 @@ const template = path.dirname(require.resolve('@suitegeezus/docdash-suitescript'
 // other code and config here
 Object.assign( jsdocConfig.opts, {template });  
 ```
-
 ### Screenshot
 
 ![SuiteScript Doc'd](https://raw.githubusercontent.com/gillyspy/docdash-suitescript/master/.README_images/ba320f52.png)
 ![SuiteScript example](https://raw.githubusercontent.com/gillyspy/docdash-suitescript/master/.README_images/5d0af3da.png)
+
+## Custom Tags
+Displaying custom tags in docs is usually the easy part but getting it into the template is difficult. So this will do 
+basic support of custom tag. All you have to do is create a script with a few lines and put it somewhere jsdoc can find. 
+
+1. Write a script (e.g. `customTags.js`) that contains something like this: 
+```js
+// customTags.js
+exports.defineTags = function (dictionary) {
+  dictionary.defineTag('kwijibo', {
+    'mustHaveValue': true,
+    canHaveType    : false,
+    canHaveName    : false,
+    'onTagged'     : function (doclet, tag) {
+
+      doclet.kwijibo = tag.value;
+
+      if (!doclet.meta) {
+        doclet.meta = {};
+      }
+      // the customTagName must match the doclet key and tag above
+      doclet.meta.customTagName = 'kwijibo';
+    }
+  })
+          // optional synonym
+    .synonym('mycustom');
+}; 
+```
+2. put this script somewhere jsdoc can see it. (probably easiest thing would be to 
+   copy it to the jsdoc/plugins folder)
+3. Refer to this script via plugins (in your jsdoc.conf)
+```json
+"plugins": ["@suitegeezus/docdash-suitescript/ssTags", "from/a/root/jsdoc/can/resolve/customTags"]
+```
+
 
 
 # Docdash
