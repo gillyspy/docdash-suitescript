@@ -1,13 +1,30 @@
 # @suitegeezus/docdash-suitescript
-Docdash but enhanced to recognize [SuiteScript's JsDoc tags](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4387175355.html)
+Docdash but enhanced to recognize [SuiteScript's JsDoc tags](https://docs.oracle.
+com/en/cloud/saas/netsuite/ns-online-help/chapter_4387175355.html):
+- NApiVersion
+- NModuleScope
+- NScriptType
+- [NAmdConfig](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4704111062.html)
+- governance - arbitrary
+- appliestorecord - arbitrary
 
-You will also need to define these tags by:
-1. installing @suitegeezus/jsdoc-plugin-suitescript
-2. specifying the following in your jsdoc config
+You will need to:
+1. inform jsdoc of these tags by adding the following in your jsdoc config plugins.
 ```json
-"plugins": ["@suitegeezus/docdash-suitescript/tags"]
-
+"plugins": ["@suitegeezus/docdash-suitescript/ssTags"]
 ```
+2. inform jsdoc you are using this template. Here is a js example: 
+```js
+const template = path.dirname(require.resolve('@suitegeezus/docdash-suitescript'));
+// other code and config here
+Object.assign( jsdocConfig.opts, {template });  
+```
+
+### Screenshot
+
+![SuiteScript Doc'd](.README_images/ba320f52.png)
+![SuiteScript example](.README_images/5d0af3da.png)
+
 
 # Docdash
 [![Build Status](https://api.travis-ci.org/clenemt/docdash.png?branch=master)](https://travis-ci.org/clenemt/docdash) [![npm version](https://badge.fury.io/js/docdash.svg)](https://badge.fury.io/js/docdash) [![license](https://img.shields.io/npm/l/docdash.svg)](LICENSE.md)

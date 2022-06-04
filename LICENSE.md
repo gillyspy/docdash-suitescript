@@ -1,4 +1,17 @@
 # License
+@suitegeezus/docdash-suitescript is free software, licensed under the Apache License, Version 2.0 (the
+"License"). Commercial and non-commercial use are permitted in compliance with
+the License.
+
+Copyright (c) 2022 Gerald Gillespie <gillyspy@gmail.com>.
+All rights reserved.
+
+@suitegeezus/docdash-suitescript includes or depends upon the following third-party software, either in
+whole or in part. Each third-party software package is provided under its own
+license.
+# Third-Party Software
+
+## Docdash
 
 Docdash is free software, licensed under the Apache License, Version 2.0 (the
 "License"). Commercial and non-commercial use are permitted in compliance with
@@ -26,11 +39,6 @@ As stated in Section 7, "Disclaimer of Warranty," of the License:
 The source code for docdash is available at:
 https://github.com/clenemt/docdash
 
-# Third-Party Software
-
-Docdash includes or depends upon the following third-party software, either in
-whole or in part. Each third-party software package is provided under its own
-license.
 
 ## JSDoc 3
 

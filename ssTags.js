@@ -89,5 +89,6 @@ exports.defineTags = function (dictionary) {
       }
       doclet.meta.partial = 'appliedtorecord.tmpl';
     }
-  });
+  })
+  .synonym('appliestorecord');
 };
