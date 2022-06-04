@@ -21,6 +21,7 @@ exports.defineTags = function (dictionary) {
     'mustHaveValue': true,
     canHaveType: false,
     canHaveName: false,
+    mustNotHaveDescription: true,
     'onTagged': function (doclet, tag) {
       doclet.NScriptType = tag.value;
 
@@ -34,6 +35,7 @@ exports.defineTags = function (dictionary) {
     'mustHaveValue': true,
     canHaveType: false,
     canHaveName: false,
+    mustNotHaveDescription: true,
     'onTagged': function (doclet, tag) {
       doclet.NModuleScope = tag.value;
 
@@ -47,6 +49,7 @@ exports.defineTags = function (dictionary) {
     'mustHaveValue': true,
     canHaveType: false,
     canHaveName: false,
+    mustNotHaveDescription: true,
     'onTagged': function (doclet, tag) {
       doclet.NApiVersion = tag.value;
 
@@ -54,6 +57,20 @@ exports.defineTags = function (dictionary) {
         doclet.meta = {};
       }
       doclet.meta.partial = 'napiversion.tmpl';
+    }
+  });
+  dictionary.defineTag('NAmdConfig', {
+    'mustHaveValue': true,
+    canHaveType: false,
+    canHaveName: false,
+    mustNotHaveDescription: true,
+    'onTagged': function (doclet, tag) {
+      doclet.NAmdConfig = tag.value;
+
+      if (!doclet.meta) {
+        doclet.meta = {};
+      }
+      doclet.meta.partial = 'namdconfig.tmpl';
     }
   });
   dictionary.defineTag('appliedtorecord', {

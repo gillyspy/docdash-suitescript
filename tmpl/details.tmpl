@@ -107,6 +107,12 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 
     <!-- Render NetSuite module data -->
 
+
+    <?js if (data.NApiVersion) {?>
+    <dt class="tag-namdconfig">Require Configuration:</dt>
+    <dd class="tag-namdconfig"><ul class="dummy"><li><?js= NAmdConfig ?></li></ul></dd>
+    <?js } ?>
+
     <?js if (data.NApiVersion) {?>
     <dt class="tag-napiversion">API Version:</dt>
     <dd class="tag-napiversion"><ul class="dummy"><li><?js= NApiVersion ?></li></ul></dd>
