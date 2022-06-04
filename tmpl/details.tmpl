@@ -220,7 +220,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     <?js } ?>
 
     <!-- custom tags here -->
-    <?js if(data.meta.customTagName){ ?>
+    <?js if(typeof data.meta === 'object' && data.meta.customTagName){ ?>
       <dt class="tag-unrecognized"><?js= data.meta.customTagName ?></dt>
       <dd class="tag-unrecognized"><?js= data[data.meta.customTagName] ?></dd>
     <?js } ?>
