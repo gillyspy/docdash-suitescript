@@ -1,6 +1,6 @@
 {
   "name": "@suitegeezus/docdash-suitescript",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "docdash -- but augmented for suitescript",
   "main": "publish.js",
   "scripts": {
