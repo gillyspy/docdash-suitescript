@@ -13,3 +13,5 @@ logs
 *.log
 jspm_packages
 .npm
+.idea
+package-lock.json

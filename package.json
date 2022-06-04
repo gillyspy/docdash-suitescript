@@ -1,7 +1,7 @@
 {
-  "name": "docdash",
+  "name": "@suitegeezus/docdash-suitescript",
   "version": "1.2.0",
-  "description": "A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami",
+  "description": "docdash -- but augmented for suitescript",
   "main": "publish.js",
   "scripts": {
     "test": "jsdoc -c fixtures/fixtures.conf.json",
@@ -10,21 +10,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/clenemt/docdash.git"
+    "url": "https://github.com/gillyspy/docdash-suitescript.git"
   },
   "devDependencies": {
     "jsdoc": "latest",
     "browser-sync": "latest",
     "watch-run": "latest"
   },
-  "author": "Clement Moron <clement.moron@gmail.com>",
+  "peerDependencies": {
+    "jsdoc": "^3.4.0"
+  },
+  "author": "Gerald Gillespie <gillyspy@gmail.com>",
   "license": "Apache-2.0",
   "keywords": [
     "jsdoc",
-    "template"
+    "template",
+    "suitescript",
+    "netsuite"
   ],
   "files": [
     "publish.js",
+    "ssTags.js",
     "static",
     "tmpl"
   ]

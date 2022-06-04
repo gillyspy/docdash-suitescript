@@ -105,6 +105,34 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     <dd class="tag-license"><ul class="dummy"><li><?js= license ?></li></ul></dd>
     <?js } ?>
 
+    <!-- Render NetSuite module data -->
+
+    <?js if (data.NApiVersion) {?>
+    <dt class="tag-napiversion">API Version:</dt>
+    <dd class="tag-napiversion"><ul class="dummy"><li><?js= NApiVersion ?></li></ul></dd>
+    <?js } ?>
+
+    <?js if (data.NScriptType) {?>
+    <dt class="tag-nscripttype">Script Type:</dt>
+    <dd class="tag-nscripttype"><ul class="dummy"><li><?js= NScriptType ?></li></ul></dd>
+    <?js } ?>
+
+    <?js if (data.NModuleScope) {?>
+    <dt class="tag-nmodulescope">Module Scope:</dt>
+    <dd class="tag-nmodulescope"><ul class="dummy"><li><?js= NModuleScope ?></li></ul></dd>
+    <?js } ?>
+
+    <?js if (data.appliedtorecord && appliedtorecord.length) {?>
+    <dt class="tag-appliedtorecord">Applied to Records:</dt>
+    <dd class="tag-appliedtorecord">
+        <ul><?js appliedtorecord.forEach(function(a) { ?>
+            <li><?js= a ?></li>
+        <?js }); ?></ul>
+    </dd>
+    <?js } ?>
+
+    <!-- end NetSuite module data -->
+
     <?js if (data.defaultvalue) {?>
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">

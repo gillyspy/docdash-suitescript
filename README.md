@@ -1,3 +1,14 @@
+# @suitegeezus/docdash-suitescript
+Docdash but enhanced to recognize [SuiteScript's JsDoc tags](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4387175355.html)
+
+You will also need to define these tags by:
+1. installing @suitegeezus/jsdoc-plugin-suitescript
+2. specifying the following in your jsdoc config
+```json
+"plugins": ["@suitegeezus/docdash-suitescript/tags"]
+
+```
+
 # Docdash
 [![Build Status](https://api.travis-ci.org/clenemt/docdash.png?branch=master)](https://travis-ci.org/clenemt/docdash) [![npm version](https://badge.fury.io/js/docdash.svg)](https://badge.fury.io/js/docdash) [![license](https://img.shields.io/npm/l/docdash.svg)](LICENSE.md)
 
