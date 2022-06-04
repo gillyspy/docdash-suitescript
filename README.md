@@ -22,8 +22,8 @@ Object.assign( jsdocConfig.opts, {template });
 
 ### Screenshot
 
-![SuiteScript Doc'd](.README_images/ba320f52.png)
-![SuiteScript example](.README_images/5d0af3da.png)
+![SuiteScript Doc'd](https://raw.githubusercontent.com/gillyspy/docdash-suitescript/master/.README_images/ba320f52.png)
+![SuiteScript example](https://raw.githubusercontent.com/gillyspy/docdash-suitescript/master/.README_images/5d0af3da.png)
 
 
 # Docdash
