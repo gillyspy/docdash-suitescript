@@ -39,7 +39,7 @@ basic support of custom tag. All you have to do is create a script with a few li
 ```js
 // customTags.js
 exports.defineTags = function (dictionary) {
-  dictionary.defineTag('kwijibo', {
+  dictionary.defineTag('kwyjibo', {
     'mustHaveValue': true,
     canHaveType    : false,
     canHaveName    : false,
@@ -50,8 +50,11 @@ exports.defineTags = function (dictionary) {
       if (!doclet.meta) {
         doclet.meta = {};
       }
+      if (!doclet.meta.customTagName){
+        doclet.meta.customTagName = [];
+      }
       // the customTagName must match the doclet key and tag above
-      doclet.meta.customTagName = 'kwijibo';
+      doclet.meta.customTagName.push('kwyjibo')
     }
   })
           // optional synonym

@@ -139,7 +139,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     <?js if (data.NApiVersion) {
         isDocked = true;
     ?>
-    <dt class="tag-namdconfig">Require Configuration:</dt>
+    <dt class="tag-namdconfig">Require<br/>Configuration:</dt>
     <dd class="tag-namdconfig"><ul class="dummy"><li><?js= NAmdConfig ?></li></ul></dd>
     <?js } ?>
 
@@ -181,9 +181,11 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
         isDocked = true;
     ?>
     <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li<?js= defaultObjectClass ?>><?js= data.defaultvalue ?></li>
-        </ul></dd>
+    <dd class="tag-default">
+      <ul class="dummy">
+        <li><?js= defaultObjectClass ?><?js= data.defaultvalue ?></li>
+      </ul>
+    </dd>
     <?js } ?>
 
     <?js if (data.tutorials && tutorials.length) {
@@ -221,9 +223,15 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 
     <!-- custom tags here -->
     <?js if(typeof data.meta === 'object' && data.meta.customTagName){ ?>
-      <dt class="tag-unrecognized"><?js= data.meta.customTagName ?></dt>
-      <dd class="tag-unrecognized"><?js= data[data.meta.customTagName] ?></dd>
-    <?js } ?>
+      <?js data.meta.customTagName.forEach(function(t) { ?>
+        <dt class="<?js= 'tag-'+t ?>"><?js= t ?>:</dt>
+        <dd class="<?js= 'tag-'+t ?>">
+           <ul class="dummy">
+              <li><?js= data[t] ?></li>
+           </ul>
+        </dd>
+      <?js }); ?>
+  <?js } ?>
 
 </dl>
 
