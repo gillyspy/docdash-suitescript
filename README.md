@@ -33,7 +33,20 @@ Object.assign( jsdocConfig.opts, {template });
 
 ## Custom Tags
 Displaying custom tags in docs is usually the easy part but getting it into the template is difficult. So this will do 
-basic support of custom tag. All you have to do is create a script with a few lines and put it somewhere jsdoc can find. 
+basic support of custom tags.
+
+## Method 1: No coding
+1. In your jsdoc `conf.json` file add a new key/section `suitescript`.
+2. Add a key for `basicTags` and give it an array of strings (must be valid key strings)
+e.g.
+```json
+  "suitescript": {
+    "basicTags": ["kwyjibo", "boom"]
+  }
+```
+
+## Method 2: Some coding
+All you have to do is create a script with a few lines and put it somewhere jsdoc can find. 
 
 1. Write a script (e.g. `customTags.js`) that contains something like this: 
 ```js
