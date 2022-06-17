@@ -1,37 +1,38 @@
 {
   "name": "@suitegeezus/docdash-suitescript",
   "version": "1.2.7",
-  "description": "docdash -- but augmented for suitescript",
-  "main": "publish.js",
-  "scripts": {
-    "test": "jsdoc -c fixtures/fixtures.conf.json",
-    "sync": "browser-sync start -s ../fixtures-doc -f ../fixtures-doc --reload-delay 1000 --no-ui --no-notify",
-    "watch": "watch-run -d 1000 -p tmpl/**,static/** \"npm run test\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gillyspy/docdash-suitescript.git"
-  },
-  "devDependencies": {
-    "jsdoc": "latest",
-    "browser-sync": "latest",
-    "watch-run": "latest"
-  },
-  "peerDependencies": {
-    "jsdoc": "^3.4.0"
-  },
-  "author": "Gerald Gillespie <gillyspy@gmail.com>",
-  "license": "Apache-2.0",
+  "description": "A custom tag plugin and template for jsdoc designed for suitescript users",
   "keywords": [
     "jsdoc",
     "template",
     "suitescript",
     "netsuite"
   ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gillyspy/docdash-suitescript.git"
+  },
+  "author": "Gerald Gillespie <gillyspy@gmail.com>",
   "files": [
     "publish.js",
     "ssTags.js",
+    "ssTags-utils.js",
     "static",
     "tmpl"
-  ]
+  ],
+  "main": "publish.js",
+  "scripts": {
+    "test": "jsdoc -c fixtures/fixtures.conf.json",
+    "sync": "browser-sync start -s ../fixtures-doc -f ../fixtures-doc --reload-delay 1000 --no-ui --no-notify",
+    "watch": "watch-run -d 1000 -p tmpl/**,static/** \"npm run test\""
+  },
+  "peerDependencies": {
+    "jsdoc": "^3.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "latest",
+    "jsdoc": "latest",
+    "watch-run": "latest"
+  }
 }
