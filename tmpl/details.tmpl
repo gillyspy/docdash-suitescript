@@ -134,34 +134,15 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     <?js } ?>
 
     <!-- Render NetSuite module data -->
-
-
-    <?js if (data.NAmdConfig) {
+  <?js if (data.governance ) {
         isDocked = true;
     ?>
-    <dt class="tag-namdconfig">Require<br/>Configuration:</dt>
-    <dd class="tag-namdconfig"><ul class="dummy"><li><?js= NAmdConfig ?></li></ul></dd>
-    <?js } ?>
-
-    <?js if (data.NApiVersion) {
-        isDocked = true;
-    ?>
-    <dt class="tag-napiversion">API Version:</dt>
-    <dd class="tag-napiversion"><ul class="dummy"><li><?js= NApiVersion ?></li></ul></dd>
-    <?js } ?>
-
-    <?js if (data.NScriptType) {
-        isDocked = true;
-    ?>
-    <dt class="tag-nscripttype">Script Type:</dt>
-    <dd class="tag-nscripttype"><ul class="dummy"><li><?js= NScriptType ?></li></ul></dd>
-    <?js } ?>
-
-    <?js if (data.NModuleScope) {
-        isDocked = true;
-    ?>
-    <dt class="tag-nmodulescope">Module Scope:</dt>
-    <dd class="tag-nmodulescope"><ul class="dummy"><li><?js= NModuleScope ?></li></ul></dd>
+    <dt class="tag-governance">Governance:</dt>
+    <dd class="tag-governance">
+        <ul class="dummy">
+            <li><?js= governance ?></li>
+        </ul>
+    </dd>
     <?js } ?>
 
     <?js if (data.appliedtorecord && appliedtorecord.length) {
@@ -224,10 +205,10 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     <!-- custom tags here -->
     <?js if(typeof data.meta === 'object' && data.meta.customTagName){ ?>
       <?js data.meta.customTagName.forEach(function(t) { ?>
-        <dt class="<?js= 'tag-'+t ?>"><?js= t ?>:</dt>
-        <dd class="<?js= 'tag-'+t ?>">
+        <dt class="<?js= 'tag-'+t.tag.toLowerCase() ?>"><?js= t.label?>:</dt>
+        <dd class="<?js= 'tag-'+t.tag.toLowerCase() ?>">
            <ul class="dummy">
-              <li><?js= data[t] ?></li>
+              <li><?js= data[t.tag] ?></li>
            </ul>
         </dd>
       <?js }); ?>
