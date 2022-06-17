@@ -1,4 +1,5 @@
 const env = require('jsdoc/env');
+
 const { suitescriptBasicTagMeta: withoutPartialTags, reservedNames } = require('./ssTags-utils');
 
 const { suitescript } = env.conf;
@@ -14,6 +15,7 @@ const uniqueTags = [...newTags, ...withoutPartialTags].flat();
  * Adds support for several SuiteScript-related tags
  */
 exports.defineTags = function (dictionary) {
+
   for (let i = 0, l = uniqueTags.length; i <= l; i++) {
     const { label, tag: newTag } = typeof uniqueTags[i] === 'object' ? uniqueTags[i] : { label: uniqueTags[i], tag: uniqueTags[i] };
     if (typeof newTag !== 'string') break;
